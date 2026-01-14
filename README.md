@@ -23,9 +23,13 @@ These scripts are specialized tools for pricing and analyzing American-style opt
 Primary Use Cases:
 
 a) Derivatives pricing: accurate valuation of American puts/calls on equities, indices, or commodities—especially when dividends or stochastic volatility matter.
+
 b) Risk management: computing Greeks (e.g., delta, gamma) via perturbation of MDP value functions; stress-testing early-exercise behavior under volatile regimes.
+
 c) Hedging: extracting optimal exercise policies to inform automated execution or dynamic hedging strategies.
+
 d) Structured products: pricing exotic payoffs with embedded American features (e.g., callable convertibles, auto-callables).
+
 e) Academic research and teaching: demonstrating how optimal stopping = MDP with 2 actions, linking reinforcement learning and classical finance.
 May be the MDP formulation is exact for discretized state spaces and provides both price and policy—not just a number, but a decision rule (“exercise if S < X(t)”).
 
