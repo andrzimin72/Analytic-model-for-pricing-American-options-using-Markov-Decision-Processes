@@ -49,20 +49,25 @@ e) Stochastic volatility models (e.g., Heston-like) - 2D MDP or DQN  traditional
 I suppose MDPtoolbox uses explicit state discretization - suffers from the curse of dimensionality. For >2 state variables, we should switch to deep RL or Monte Carlo with regression (LSM).
 
 ## 3. Recommendations for Analysis
+
 a) Start begin with constant volatility, no dividends, and compare:
 - MDP result ↔ Binomial tree ↔ Black-Scholes (for European reference);
 - verify convergence as you increase N_states and N_steps.
+
 b) Add Realism Gradually:
 - introduce dividends (q > 0) → observe earlier exercise for calls;
 - switch to stochastic volatility → see how uncertainty in v delays exercise (volatility smile effect);
 - plot the early-exercise boundary — it should tilt upward for puts as maturity approaches.
+
 c) Validate Against Market Data:
 - calibrate sigma (or Heston parameters) to market prices of American options (e.g., on ETFs like SPY);
 - use our MDP pricer to infer implied early-exercise premiums.
+
 d) Use Policy Output for Strategy Design:
 - the policy array tells you exactly when to exercise;
 - feed this into a backtester: simulate paths, apply the policy, compute P&L;
 - compare against naive strategies (e.g., “exercise at-the-money”).
+
 e) Hybrid Workflow:
 - use MDP for offline policy learning;
 - use DQN or LSM for online/inference in high-dim settings;
