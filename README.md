@@ -77,7 +77,7 @@ I think traditional finance often treats option pricing as a pure valuation prob
 May be this perspective is increasingly valuable in real options analysis in corporate finance.
 
 ## 4. Possible Questions:
-- pricing & policy extraction for American options under dividends or stochastic volatility;
+- pricing and policy extraction for American options under dividends or stochastic volatility;
 - use MDP for accuracy in 1–2D; use DQN/LSM for scalability;
 - output to leverage - the exercise policy, not just the price;
 - avoid in high-frequency or high-dimensional production systems without approximation.
